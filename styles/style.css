@@ -1,0 +1,203 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  --dark_gray: hsl(0, 0%, 59%);
+  --very_dark_gray: hsl(0, 0%, 17%);
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  padding: 0.1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-image: url('../images/pattern-bg.png');
+  background-attachment: fixed;
+  padding: 0.1em;
+  min-height: 300px;
+}
+
+.main-heading {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: white;
+  margin: 1em 0;
+}
+
+form {
+  width: 85%;
+  max-width: 555px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#ip-address-input {
+  width: 100%;
+  font-size: 18px;
+  color: var(--very_dark_gray);
+  border-radius: 0.85em;
+  padding: 0.8em 1.2em;
+  display: block;
+  border: none;
+}
+
+#ip-address-input::placeholder {
+  color: var(--dark_gray);
+  font-size: 1.2rem;
+}
+
+.submit-btn {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 2.1em;
+  border-radius: 0 1.5em 1.5em 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.submit-btn:hover {
+  opacity: 0.85;
+}
+
+.main {
+  position: relative;
+  min-height: 506px;
+}
+
+.ip-info-list {
+  margin: 3em auto 0 auto;
+  padding: 2.1em 2.1em;
+  width: 85%;
+  max-width: 1110px;
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0 0 10px 0.1px rgb(105, 105, 105);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-gap: 2.1em;
+  position: absolute;
+  top: -175px;
+  left: 7%;
+  right: 7%;
+  z-index: 12;
+}
+
+.ip-info h2 {
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  color: var(--dark_gray);
+}
+
+.ip-info p {
+  font-size: clamp(2.05rem, 2.2vw, 2.7rem);
+  line-height: 3rem;
+  font-weight: 700;
+  color: var(--very_dark_gray);
+  margin-top: 0.3em;
+}
+
+#map {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+
+
+
+@media (min-width: 618px) {
+
+  #ip-address-input::placeholder {
+    font-size: 1.8rem;
+  }
+
+  .main {
+    min-height: 380px;
+  }
+
+  header {
+    height: 280px;
+  }
+
+  .ip-info-list {
+    top: -125px;
+    left: 7%;
+    right: 7%;
+  }
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* right: 0; */
+  background-color: black;
+  color: white;
+  z-index: 33;
+  height: 21px;
+  padding: 0.5em;
+}
+
+.attribution a {
+  color: hsl(177, 66%, 53%);
+}
+
+}
+
+@media (min-width: 842px) {
+  .ip-info-list {
+    padding: 3.7em 4em;
+  }
+
+  li.ip-info:last-of-type {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 1208px) {
+
+  .ip-info + .ip-info {
+    border-left: 1px solid var(--dark_gray);
+    padding: 0 0 0 3.5em;
+  }
+  
+  .main {
+    min-height: 478px;
+  }
+
+  .ip-info-list {
+    top: -115px;
+    text-align: left;
+  }
+
+  li.ip-info:last-of-type {
+    grid-column: initial;
+  }
+
+  .ip-info p {
+    margin-top: 0.5em;
+  }
+}

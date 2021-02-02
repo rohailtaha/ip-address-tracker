@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <title>Frontend Mentor | IP Address Tracker</title>
+
+  </head>
+  <body>
+    <header>
+      <h1 class="main-heading">IP Address Tracker</h1>
+      <form>
+        <input
+          type="text"
+          name="ip-address"
+          value=""
+          id="ip-address-input"
+          placeholder="Search for any IP address or domain"
+        />
+        <a href="#" class="submit-btn"
+          ><img
+            src="images/icon-arrow.svg"
+            alt="arrow icon"
+            class="arrow-img"
+          />
+        </a>
+      </form>
+    </header>
+
+    <div class="main">
+      <ul class="ip-info-list">
+        <li class="ip-info">
+          <h2>IP Address</h2>
+          <p id="ip-address"></p>
+        </li>
+        <li class="ip-info">
+          <h2>Location</h2>
+          <p id="location"></p>
+        </li>
+        <li class="ip-info">
+          <h2>Timezone</h2>
+          <p id="timezone">
+            <!-- add offset value dynamically using the API -->
+          </p>
+        </li>
+        <li class="ip-info">
+          <h2>ISP</h2>
+          <p id="isp"></p>
+        </li>
+      </ul>
+      <div id="map"></div>
+      <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Rohail Taha</a>.
+    </div>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

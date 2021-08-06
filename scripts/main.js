@@ -24,7 +24,6 @@ const myIcon = L.icon({
   popupAnchor: [-3, -76],
 });
 
-// L.marker([50.505, 30.57], {icon: myIcon}).addTo(map)
 
 /** Get The Location Of An IP Address **/
 const getLocation = async ipAddress => {
@@ -41,7 +40,6 @@ const getLocation = async ipAddress => {
 
 /** Display The Location On Map And It's Details **/
 const displayLocation = data => {
-  console.log(data);
   mymap.setView([data.location.lat, data.location.lng], 13);
   L.marker([data.location.lat, data.location.lng], { icon: myIcon }).addTo(
     mymap

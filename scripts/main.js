@@ -11,7 +11,8 @@ L.tileLayer(
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: process.env.ACCESS_TOKEN,
+    accessToken:
+      'pk.eyJ1Ijoicm9oYWlsNzciLCJhIjoiY2trbzAxY3Q4MXE4bzJ3bXphODdoOHo1ZyJ9.R5IKmDg9LOtEF1Xbyn9Ixg',
   }
 ).addTo(mymap);
 
@@ -23,12 +24,11 @@ const myIcon = L.icon({
   popupAnchor: [-3, -76],
 });
 
-
 /** Get The Location Of An IP Address **/
 const getLocation = async ipAddress => {
   try {
     const response = await fetch(
-      `https://geo.ipify.org/api/v1?apiKey=${process.env.API_KEY}&ipAddress=${ipAddress}`
+      `https://geo.ipify.org/api/v1?apiKey=at_JAd6W8en7KlzOcbZ2aHHMe7gZkFzU&ipAddress=${ipAddress}`
     );
     const data = await response.json();
     displayLocation(data);
@@ -77,4 +77,3 @@ document.querySelector('.submit-btn').addEventListener('click', e => {
   const ipAddress = document.getElementById('ip-address-input').value;
   getLocation(ipAddress);
 });
-

@@ -126,11 +126,35 @@ form {
   height: 100%;
 }
 
+.fetch-error {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3em;
+}
 
+.fetch-error p {
+  max-width: 520px;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
 
+.fetch-error h2 {
+  font-size: 3.6rem;
+  margin-bottom: 0.5em;
+  color: rgb(233, 24, 24);
+}
+
+.fetch-error span {
+  color: rgb(233, 24, 24);
+}
 
 @media (min-width: 618px) {
-
   #ip-address-input::placeholder {
     font-size: 1.8rem;
   }
@@ -149,22 +173,21 @@ form {
     right: 7%;
   }
 
-.attribution {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  /* right: 0; */
-  background-color: black;
-  color: white;
-  z-index: 33;
-  height: 21px;
-  padding: 0.5em;
-}
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* right: 0; */
+    background-color: black;
+    color: white;
+    z-index: 33;
+    height: 21px;
+    padding: 0.5em;
+  }
 
-.attribution a {
-  color: hsl(177, 66%, 53%);
-}
-
+  .attribution a {
+    color: hsl(177, 66%, 53%);
+  }
 }
 
 @media (min-width: 842px) {
@@ -178,12 +201,11 @@ form {
 }
 
 @media (min-width: 1208px) {
-
   .ip-info + .ip-info {
     border-left: 1px solid var(--dark_gray);
     padding: 0 0 0 3.5em;
   }
-  
+
   .main {
     min-height: 478px;
   }

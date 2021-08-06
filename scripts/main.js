@@ -1,5 +1,5 @@
 // Create the map
-const mymap = L.map('map',{zoomControl:false})
+const mymap = L.map('map', { zoomControl: false });
 
 // Get the tiles for map and add to map
 L.tileLayer(
@@ -14,7 +14,7 @@ L.tileLayer(
     accessToken:
       'pk.eyJ1Ijoicm9oYWlsNzciLCJhIjoiY2trbzAxY3Q4MXE4bzJ3bXphODdoOHo1ZyJ9.R5IKmDg9LOtEF1Xbyn9Ixg',
   }
-).addTo(mymap)
+).addTo(mymap);
 
 // Create the map marker icon
 const myIcon = L.icon({
@@ -22,7 +22,7 @@ const myIcon = L.icon({
   iconSize: [34, 44],
   iconAnchor: [22, 94],
   popupAnchor: [-3, -76],
-})
+});
 
 // L.marker([50.505, 30.57], {icon: myIcon}).addTo(map)
 
@@ -31,45 +31,52 @@ const getLocation = async ipAddress => {
   try {
     const response = await fetch(
       `https://geo.ipify.org/api/v1?apiKey=at_JAd6W8en7KlzOcbZ2aHHMe7gZkFzU&ipAddress=${ipAddress}`
-    )
-    const data = await response.json()
-    displayLocation(data)
+    );
+    const data = await response.json();
+    displayLocation(data);
   } catch (err) {
-    throw err
+    throw err;
   }
-}
+};
 
 /** Display The Location On Map And It's Details **/
 const displayLocation = data => {
-  console.log(data)
-  mymap.setView([data.location.lat, data.location.lng], 13)
+  console.log(data);
+  mymap.setView([data.location.lat, data.location.lng], 13);
   L.marker([data.location.lat, data.location.lng], { icon: myIcon }).addTo(
     mymap
-  )
-  document.getElementById('ip-address').innerHTML = data.ip
+  );
+  document.getElementById('ip-address').innerHTML = data.ip;
   document.getElementById(
     'location'
-  ).innerHTML = `${data.location.region}, ${data.location.city} ${data.location.postalCode}, ${data.location.country}`
+  ).innerHTML = `${data.location.region}, ${data.location.city} ${data.location.postalCode}, ${data.location.country}`;
   document.getElementById(
     'timezone'
-  ).innerHTML = `UTC ${data.location.timezone}`
-  document.getElementById('isp').innerHTML = data.isp
-}
+  ).innerHTML = `UTC ${data.location.timezone}`;
+  document.getElementById('isp').innerHTML = data.isp;
+};
+
+const showFetchError = () => {
+  document.querySelector('.main').style.display = 'none';
+  document.querySelector('header').style.display = 'none';
+  document.querySelector('.fetch-error').style.display = 'flex';
+};
 
 /** Get Clients IP And Location On Initial Load Of Page **/
-;(async function () {
+(async function () {
   try {
-    const response = await fetch(`https://api.ipify.org/?format=json`)
-    const data = await response.json()
-    document.getElementById('ip-address-input').value = data.ip
-    getLocation(data.ip)
+    const response = await fetch(`https://api.ipify.org/?format=json`);
+    const data = await response.json();
+    document.getElementById('ip-address-input').value = data.ip;
+    getLocation(data.ip);
   } catch (err) {
-    throw err
+    showFetchError();
+    throw err;
   }
-})()
+})();
 
 document.querySelector('.submit-btn').addEventListener('click', e => {
-  e.preventDefault()
-  const ipAddress = document.getElementById('ip-address-input').value
-  getLocation(ipAddress)
-})
+  e.preventDefault();
+  const ipAddress = document.getElementById('ip-address-input').value;
+  getLocation(ipAddress);
+});

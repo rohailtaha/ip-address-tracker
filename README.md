@@ -2,7 +2,7 @@
 
 ## About the App
 
-An IP address tracker app built using vanilla javascript. **IP Geolocation API by Ipify** is used to get ip address information and **Leaflet.js** library is used to generate maps. 
+An IP address tracker app built using vanilla javascript. **IP Geolocation API by Ipify** is used to get ip address information and **Leaflet.js** library is used to generate maps. The app can be previewed on [this link](https://ip-address-tracker-rohail.vercel.app/)
 
 ## Features
 The user can
@@ -22,6 +22,9 @@ The user can
 The following resources were helpful in completing this project:
 - [Stack Overflow](https://stackoverflow.com/) 
 - [API Documentation](https://geo.ipify.org/docs) for IP Geolocation API. 
+
+## Hosting
+The app is hosted on **Vercel** and can be previewed on [this link](https://ip-address-tracker-rohail.vercel.app/)
 
 ### Note
 If you have adblocker extension on, then it may block request to the API's. If you see an error message on starting the app, try disabling adblocker or any other extensions that may block requests to API's.

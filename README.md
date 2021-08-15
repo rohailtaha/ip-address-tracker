@@ -20,8 +20,8 @@ The user can
 ## Useful Resources
 
 The following resources were helpful in completing this project:
-- [**Stack Overflow**](https://stackoverflow.com/) 
-- [**API Documentation**](https://geo.ipify.org/docs) for IP Geolocation API. 
+- [Stack Overflow](https://stackoverflow.com/) 
+- [API Documentation](https://geo.ipify.org/docs) for IP Geolocation API. 
 
 ### Note
 If you have adblocker extension on, then it may block request to the API's. If you see an error message on starting the app, try disabling adblocker or any other extensions that may block requests to API's.
